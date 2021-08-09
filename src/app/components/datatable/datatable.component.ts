@@ -10,7 +10,7 @@ export class DatatableComponent implements OnDestroy, OnInit {
 
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
-  data: any[] = [];
+  datos: any[] = [];
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
@@ -23,7 +23,9 @@ export class DatatableComponent implements OnDestroy, OnInit {
     };
     this.httpClient.get('http://dummy.restapiexample.com/api/v1/employees')
     .subscribe((res:any) => {
-      this.data = res.data
+      
+      
+      this.datos = res.data;
       this.dtTrigger.next();
     })
   }

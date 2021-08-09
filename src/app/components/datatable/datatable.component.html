@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table table-striped table-bordered hover">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Salario</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of data">
+            <td>{{data.employee_name}}</td>
+            <td>{{data.employee_salary}}</td>
+            <td>{{data.employee_age }}</td>
+        </tr>
+        </tbody>
+   </table>
+</div>
